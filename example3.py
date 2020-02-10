@@ -6,7 +6,7 @@
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'E3'
+team_name = 'The Hyenas'
 strategy_name = 'Collude but retaliate'
 strategy_description = '''\
 Collude first round. Collude, except in a round after getting 
