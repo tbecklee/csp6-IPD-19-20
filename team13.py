@@ -7,8 +7,8 @@
 ####
 
 team_name = 'S & A' # Only 10 chars displayed.
-strategy_name = 'The name the team gives to this strategy'
-strategy_description = 'How does this strategy decide?'
+strategy_name = 'Betray if worse score, collude every 10th'
+strategy_description = 'This strategy keeps colluding until our score is worse than the other players, and then, it always betrays. It also always colludes every tenth round.'
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
@@ -17,6 +17,14 @@ def move(my_history, their_history, my_score, their_score):
     Make my move.
     Returns 'c' or 'b'. 
     '''
+    if len(my_history) == 0:
+      return 'c'
+    elif len(my_history) % 10 == 0:
+      return 'c'
+    elif my_score < their_score:
+      return 'b'
+    else:
+      return 'c'
 
     # my_history: a string with one letter (c or b) per round that has been played with this opponent.
     # their_history: a string of the same length as history, possibly empty. 
@@ -25,6 +33,3 @@ def move(my_history, their_history, my_score, their_score):
     
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
-    
-    return 'c'
-
