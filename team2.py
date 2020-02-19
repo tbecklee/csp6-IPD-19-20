@@ -67,7 +67,7 @@ def move(my_history, their_history, my_score, their_score):
   count = 0
   
   if len(their_history) < 10:
-    return 'b'
+    return 'b' # this should prevent the while loop below from running
 
   # ideally, this should only be done at the start of the round after 10 matches and saved to a file but it's alright
   while (iterator < 10):
@@ -92,6 +92,8 @@ def move(my_history, their_history, my_score, their_score):
       retaliates = True
     else:
       retaliates = False
+  else:
+    return 'c' # incase it fails
 
 
   '''
