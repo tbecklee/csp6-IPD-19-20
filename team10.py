@@ -26,4 +26,4 @@ def move(my_history, their_history, my_score, their_score):
     if len(their_history) > 160: # if they havent betrayed and round past 160, betray
       return 'b'
     else:
-      return 'c'
+      return 'c' 
